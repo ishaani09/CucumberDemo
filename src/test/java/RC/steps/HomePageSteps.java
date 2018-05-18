@@ -26,4 +26,15 @@ public class HomePageSteps {
         homePage.enterSearchText(stockNumber);
         homePage.clickSearchButton();
     }
+
+    @Step
+    public void addProductFromQuickOrderSection(String stockNumber, String quantity) {
+        homePage.enterStockNumberOneInQOSection(stockNumber);
+        homePage.enterQuantityOneInQOSection(quantity);
+        homePage.clickAddToCartButtonInQOSection();
+    }
+
+    public void searchForText(String searchText) {
+        homePage.selectSearchText(searchText);
+    }
 }

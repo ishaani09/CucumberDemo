@@ -20,4 +20,14 @@ public class HomePageDefs {
     public void iSearchForTheRSStockNumber(String stockNumber) throws Throwable {
         homePageSteps.searchFor(stockNumber);
     }
+
+    @And("^I add \"([^\"]*)\" of \"([^\"]*)\" from quickorder section$")
+    public void iAddOfFromQuickorderSection(String quantity, String stockNumber) throws Throwable {
+        homePageSteps.addProductFromQuickOrderSection(stockNumber, quantity);
+    }
+
+    @Given("^I search for text \"([^\"]*)\"$")
+    public void iSearchForText(String searchText) throws Throwable {
+        homePageSteps.searchForText(searchText);
+    }
 }

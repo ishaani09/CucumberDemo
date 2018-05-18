@@ -1,10 +1,12 @@
 package RC.stepDefs;
 
+import RC.steps.CheckoutLoginSteps;
 import RC.steps.HomePageSteps;
 import RC.steps.LoginSteps;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import net.thucydides.core.annotations.Steps;
 
 public class LoginDefs {
@@ -15,11 +17,17 @@ public class LoginDefs {
     @Steps
     LoginSteps loginSteps;
 
-    @Given("^As a registered user I login with credentials \"([^\"]*)\" and \"([^\"]*)\"$")
-    public void asARegisteredUserILoginWithCredentialsAnd(String username, String password) throws Throwable {
+    @Steps
+    CheckoutLoginSteps checkoutLoginSteps;
+
+    @Given("^I login with credentials \"([^\"]*)\" and \"([^\"]*)\"$")
+    public void iLoginWithCredentialsAnd(String username, String password) throws Throwable {
         homePageSteps.goToLoginSection();
         loginSteps.logInAsUser(username,password);
     }
 
-
+    @Then("^I checkout as guest$")
+    public void iCheckoutAsGuest() throws Throwable {
+        checkoutLoginSteps.checkOutAsAGuest();
+    }
 }
