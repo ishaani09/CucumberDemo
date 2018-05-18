@@ -1,0 +1,11 @@
+/target/
+/bin/
+.idea/
+*.iml
+.metadata/
+*.project
+example.log
+DefinitionSteps.java
+EndUserSteps.java
+DefinitionTestSuite.java
+chromedriver
